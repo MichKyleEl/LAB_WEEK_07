@@ -8,6 +8,12 @@ android {
     namespace = "com.example.lab_week_07"
     compileSdk = 36
 
+    secrets {
+        // Ini akan mengambil semua properti dari file secrets.properties
+        // dan membuatnya tersedia untuk manifest placeholder
+        propertiesFileName = "secrets.properties"
+    }
+
     defaultConfig {
         applicationId = "com.example.lab_week_07"
         minSdk = 24
@@ -40,7 +46,6 @@ android {
 }
 
 dependencies {
-    implementation(libs.play.services.location)
     implementation(libs.androidx.activity.ktx)
     implementation(libs.androidx.fragment.ktx)
     implementation(libs.androidx.core.ktx)
@@ -49,6 +54,7 @@ dependencies {
     implementation(libs.androidx.activity)
     implementation(libs.androidx.constraintlayout)
     implementation(libs.play.services.maps)
+    implementation(libs.play.services.location)
     testImplementation(libs.junit)
     androidTestImplementation(libs.androidx.junit)
     androidTestImplementation(libs.androidx.espresso.core)
